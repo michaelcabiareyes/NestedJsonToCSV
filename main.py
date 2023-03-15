@@ -3,7 +3,7 @@ import json
 import argparse
 
 def json_to_csv(input_json_filepath, output_csv_filename):
-	data = json.load(open(input_json_filepath))
+	data = json.load(open(input_json_filepath, encoding="utf8"))
 	data = pd.json_normalize(data)
 	data.to_csv(output_csv_filename)
 	return
